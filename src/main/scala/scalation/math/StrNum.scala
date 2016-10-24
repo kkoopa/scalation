@@ -287,7 +287,7 @@ object StrO
         //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         /** Must also override hashCode to be be compatible with equals.
          */
-        override def hashCode: Int = ss.hashCode
+        override def hashCode (): Int = ss.hashCode
 
         //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         /** Convert 'this' string number to a String.

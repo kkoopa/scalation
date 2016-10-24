@@ -272,7 +272,7 @@ case class Complex (val re: Double, val im: Double = 0.0)
     //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     /** Must also override hashCode to be be compatible with equals.
      */
-    override def hashCode: Int = re.hashCode + 41 * im.hashCode
+    override def hashCode (): Int = re.hashCode + 41 * im.hashCode
 
    //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     /** Set the format to the 'newFormat'.

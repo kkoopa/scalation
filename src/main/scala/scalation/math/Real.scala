@@ -353,7 +353,7 @@ case class Real (hi: Double, lo: Double = 0.0) // extends strictfp
     //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     /** Must also override hashCode to be be compatible with equals.
      */
-    override def hashCode: Int = hi.hashCode + 41 * lo.hashCode
+    override def hashCode (): Int = hi.hashCode + 41 * lo.hashCode
 
     //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     /** Convert 'this' real number to a String in standard form "dd.dd".

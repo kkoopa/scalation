@@ -841,7 +841,7 @@ class VectorQ (val dim: Int,
     //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     /** Must also override hashCode for 'this' vector to be compatible with equals.
      */
-    override def hashCode: Int = v.deep.hashCode
+    override def hashCode (): Int = v.deep.hashCode
 
     //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     /** Set the format to the 'newFormat' (e.g., "%.6g,\t" or "%12.6g,\t").

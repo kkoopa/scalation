@@ -67,7 +67,7 @@ trait Identifiable extends Error
     //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     /** Return the hashCode as the unique id.
      */
-    override def hashCode: Int = id
+    override def hashCode (): Int = id
 
 } // Identifiable trait
 

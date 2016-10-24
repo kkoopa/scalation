@@ -759,7 +759,7 @@ class VectorN [T <% Ordered [T]: ClassTag: Numeric] (val dim: Int,
     //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     /** Must also override hashCode to be be compatible with equals.
      */
-    override def hashCode: Int = v.deep.hashCode
+    override def hashCode (): Int = v.deep.hashCode
 
     //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     /** Hash a vector into an integer.  Serves as the default hash function for

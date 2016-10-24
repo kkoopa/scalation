@@ -302,7 +302,7 @@ case class Rational (val num: Long, val den: Long = 1l)
     //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     /** Must also override hashCode to be be compatible with equals.
      */
-    override def hashCode: Int = num.hashCode + 41 * den.hashCode
+    override def hashCode (): Int = num.hashCode + 41 * den.hashCode
 
     //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     /** Convert this rational number to a String of the form 'a/b'.
