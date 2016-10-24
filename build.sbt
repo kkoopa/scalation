@@ -7,7 +7,7 @@ organization := "scalation"
 
 version := "1.2"
 
-scalaVersion := "2.12.0-M3"
+scalaVersion := "2.12.0-RC2"
 
 fork := true
 
@@ -15,8 +15,8 @@ fork := true
 // scalacOptions += "-unchecked"
 scalacOptions += "-deprecation"
 
-scalacOptions += "-Yopt:l:classpath"            // optimize
-scalacOptions += "-Yopt-warnings"
+scalacOptions += "-opt:_"            // optimize
+scalacOptions += "-opt-warnings:_"
 scalacOptions += "-Xlint:-adapted-args"         // run lint - disable "adapted-args" (auto tupling used)
 
 javaOptions += "-Xmx2G"
@@ -24,6 +24,8 @@ javaOptions += "-Xmx2G"
 libraryDependencies += "org.scala-lang" % "scala-reflect" % scalaVersion.value
 
 libraryDependencies += "org.scala-lang" % "scala-compiler" % scalaVersion.value
+
+libraryDependencies += "org.scala-lang.modules" %% "scala-parser-combinators" % "1.0.4"
 
 libraryDependencies += "org.jsoup" % "jsoup" % "1.8.2"
 
