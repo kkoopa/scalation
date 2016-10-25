@@ -99,7 +99,7 @@ class Partition [TLabel: ClassTag] (g: Graph [TLabel])
         for (i <- ilabel.indices) {                               // put vertex into map based on ilabel
             val iset = partMap.getOrElse (ilabel(i), null)
             if (iset == null) partMap += ilabel(i) -> SET (i)
-            else              iset += i
+            else              iset add i
         } // for
         if (DEBUG) println (s"partition: partMap = $partMap")
     } // partition
