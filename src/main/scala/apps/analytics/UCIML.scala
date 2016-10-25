@@ -13,7 +13,7 @@ package apps.analytics
 
 import java.time.LocalDate
 
-import collection.JavaConversions._
+import collection.JavaConverters._
 import collection.immutable.List
 import collection.mutable.ListBuffer
 
@@ -33,13 +33,15 @@ class UCIMLMeta (val url: String)
 
     val elems = doc.select("table + table tr td p")
                    .listIterator()
-                   .flatMap(elem => elem.textNodes().toList)
+                   .asScala
+                   .flatMap(elem => elem.textNodes().asScala.toList)
                    .map(node => node.text())
                    .toList
 
     val about = doc.select("p")
                    .listIterator()
-                   .flatMap(elem => elem.textNodes().toList)
+                   .asScala
+                   .flatMap(elem => elem.textNodes().asScala.toList)
                    .map(node => node.text())
                    .toList
                    .filter(s => s.startsWith(":"))
@@ -89,6 +91,7 @@ object UCIML extends App {
     val doc   = Jsoup.connect("http://archive.ics.uci.edu/ml/datasets.html?task=reg").get()
     val links = doc.select("a")
         .listIterator()
+        .asScala
         .map(elem => elem.attributes().get("href"))
         .filter(s => s.startsWith("datasets/"))
 
